@@ -1,4 +1,8 @@
 Imdb::Application.routes.draw do
+  root to: "movies#index"
+
+  match 'movies/casts' => "movies#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
