@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
     search = Imdb::Search.new(params[:title])
     movie_id = search.movies[0].id
     mv = Imdb::Movie.new(movie_id)
+    @title = mv.title
     @cast = mv.cast_members[0..5]
   end
 
